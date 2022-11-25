@@ -10,6 +10,7 @@ var gravity = 10;
 var isJumping = false;
 var jumpheight = 20;
 var jumpduration = 0;
+var speed = 10;
 
 let layout1 = [750];
 let layout2 =  [700];
@@ -36,7 +37,7 @@ function draw() {
     if (y1 > 750){
         y1= 750;
     }
-    x1 += 10;
+    x1 += speed;
     if (x1 > 250){
         x1 = 250;
         canmove = true;
@@ -63,7 +64,7 @@ function draw() {
 
     if (canmove == true){
         if (colliding == false){
-            x2 -= 10;
+            x2 -= speed;
         }
     }
 
@@ -83,7 +84,7 @@ function draw() {
         if (x1 < (x2 - 30)){
             if (y1 > (currentlayout[0] - 50)){
                 colliding = true;
-                x2 += 10;
+                x2 += speed;
             }
         }
     }
